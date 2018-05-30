@@ -39,10 +39,11 @@
     transition:top .5s ease
 }
 .search-box {
-    display:flex
+    display:flex;
+    height: 6vh;
 }
 .doodle {
-    width:20vw;
+    width:17vw;
 }
 .doodle a {
     position:relative;
@@ -69,8 +70,6 @@
 }
 .input-area {
     position:relative;
-    /* width:75vw; */
-    height:4vw
 }
 .search-input {
     -webkit-appearance:none;
@@ -96,6 +95,7 @@
 }
 .search-btn {
     -webkit-appearance:none;
+    float:left;
     outline:none;
     cursor:pointer;
     width:6vw;
@@ -132,8 +132,7 @@
     position:relative;
     display:inline-block;
     box-sizing:border-box;
-    height:4vw;
-    line-height:4vw;
+    line-height:6vh;
     padding-right:32px;
     font-size:1vw;
     color:rgba(0, 0, 0, .7);
