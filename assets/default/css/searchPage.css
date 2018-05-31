@@ -44,6 +44,8 @@
 }
 .doodle {
     width:17vw;
+    text-align: right;
+    line-height: 6vh;
 }
 .doodle a {
     position:relative;
@@ -120,7 +122,6 @@
     position:absolute;
     right:6vw;
     top:0;
-    width:74px;
     height:100%;
     text-align:right;
     transition:opacity 0s linear
