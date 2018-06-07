@@ -1,0 +1,18 @@
+.homePage ul li{
+	float: left;
+	padding: 0 1vw;
+}
+
+/*鼠标滑过文字，显示图片*/
+.text-img{
+	position: relative;
+}
+.text-img img{
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: 0;
+}
+.text-img:hover img{
+	display: block;
+}
