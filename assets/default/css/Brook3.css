@@ -1,3 +1,11 @@
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
 .display-none{
 	display:none;
 }
@@ -33,4 +41,5 @@ button,input,select,textarea{
 }
 .main{
 	margin-top:10vh;
+	margin-bottom:10vh;
 }
