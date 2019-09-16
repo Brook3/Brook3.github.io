@@ -1,0 +1,190 @@
+@import "header.css";
+@import "apps.css";
+@import "setting.css";
+@import "plugin.css";
+@import "sidebar.css";
+@import "footer.css";
+body {
+	margin: 0;
+	padding: 0;
+	background-color: lightgrey;
+}
+.off {
+    display:none
+}
+.hide {
+    pointer-events:none;
+    opacity:0
+}
+.show {
+    pointer-events:auto;
+    opacity:1
+}
+#search{
+    padding:10vh 5vw;
+}
+#search-logo {
+    width:320px;
+    height:120px;
+    background-size:320px;
+	margin: 0 auto;
+}
+#search-logo[data-engine=baidu] {
+    background-image:url('//resource.brook3.com/images/search/baidu.png')
+}
+#search-logo[data-engine=bing] {
+    background-image:url('//resource.brook3.com/images/search/bing.png')
+}
+#search-logo[data-engine=google] {
+    background-image:url('//resource.brook3.com/images/search/google.png')
+}
+#search-logo[data-engine=sogou] {
+    background-image:url('//resource.brook3.com/images/search/sogou.png')
+}
+.search-transition {
+    transition:top .5s ease
+}
+.search-middle, .search-middle-transition {
+    top:calc(36% - 1.125em)!important
+}
+.search-middle-transition {
+    transition:top .5s ease
+}
+.search-box {
+    display:flex;
+    height: 6vh;
+}
+.doodle {
+    width:17vw;
+    text-align: right;
+    line-height: 6vh;
+}
+.doodle a {
+    position:relative;
+    display:block;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-position:50%
+}
+.doodle img {
+    position:absolute;
+    top:50%;
+    right:0;
+    transform:translateY(-50%)
+}
+.doodle-normal {
+    display:block
+}
+.doodle-light, .light .doodle-normal {
+    display:none
+}
+.light .doodle-light {
+    display:block
+}
+.input-area {
+    position:relative;
+}
+.search-input {
+    -webkit-appearance:none;
+    outline:none;
+    box-sizing:border-box;
+    float:left;
+    width:45vw;
+    height:100%;
+    padding:0 80px 0 15px;
+    border:1px solid #ccc;
+    border-right:0 none;
+    border-radius:4px 0 0 4px;
+    font-size:15px;
+    color:#000;
+    background-color:#fff;
+    transition:border-color .2s ease
+}
+.search-input:focus {
+    border-color:#08f
+}
+.light .search-input {
+    border:0 none
+}
+.search-btn {
+    -webkit-appearance:none;
+    float:left;
+    outline:none;
+    cursor:pointer;
+    width:6vw;
+    height:100%;
+    line-height:100%;
+    vertical-align:middle;
+    border:none;
+    border-radius:0 4px 4px 0;
+    color:#fff;
+    background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAYFJREFUOBHVk7FOwlAUhlsNcYBACDEMLkYmNxbixOAb6DPo6BvIyOqbOLiysJmYOLlINGFSooOJgy4kkvr9tSfl3t5CdPNPPu655/w9nLa3UeQpSZJjuIQnmMMrjOAEKp69fIt5B65hlR4pdsu7ZBVMavacdfpgHUAfWtCDM5iB9Am9lU0x2GS3xLshM/kmXIGkP6+FfBEFPTNJkwWb2YXUqzAFaWB5Z6WgFyCdO4WSDT4bYBK0YLBn1w8avCR+PVdTwytHumUdDalVKJYk8OooSXu+ZYPEe5YsFH2z9jTRy9iGBczAkRreZZkDp1K+0ZHRddM4jucFG/94qtmRzlmzYFhKUN+EG5CGS6U8pFABfQGSzlk1r+YReTW7AOkN6nnViyh2QV+ApHN2BOlLYq3BIdhkhKmn7bVxt5j0idkR0kXSCyzS6OdHk9nBvide21TT6DuegOmL4AGGUIc2qJm0vqnNjbkBHdiynK3k/tbUGoTWf9t0HLqbX+ey2x+z7n8DYbktYx3rNpUAAAAASUVORK5CYII=) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAxpJREFUWAntl7trFUEUh++qgWBIEZIQFDGoWIlFkAhaKWglGLRJFy2EFD7KYP4BU0tKQ8AilV0KhfgIgmgpIsTyioqiEQRREF/X75fcGw7Hnd3Ze3fFIgc+dl7nN2dnd2bPJrVIazQaIwwdg6Ows0k313fwFlZgEe4nSfKNa/VGUFvhAtQh1r4wcBYGK42QCY7DCrRrn3Gchi2lB4roZfgJZdgiIr2lBYnY9UBU32m/DZNwGHbBAByEM3ADPkCaPaexv+MgEbmSov6btgXYkzcBY7phCj6Bt2UatuVpBPtx1jvnH6te+LNBp0AHPsPwDLzNBlyym1HRbvUbQsEdyvYM9+LbA4/Bmp6GjqtihpOOEmsSKrxyflY0huCVFaa85Mfl1nGqO5GFXKfIAeiOOW1VRyPdazUGjzgB7dbcDRE9AQPRe+TmmIn11yGqz5e1e3yq6rahhPKc0/Bzum5T5c7uurubNN2lFNHXeelPiL4Yca2gPvzWntpKGWWeyEd03jgtP6/rXq8qwB2uR5lJFeZ1/bypcypApUzWqkqVvO52O2morACVz1mLujPrEFn2uqsxfgrQL/2+GMciY9ggXYzf7Xzeu3pqVQEqE7Z2ylZKKh9Dxz5SrV7UUaYAlaZb08nv30vb30553Dk9ZGc3XFt6VcGAEgNrU+mji7ciuh9+WHHKPuBsYRz0D2FN+dxwtld+LxoJ3LHClF9DsbwQh0HQP4Q15XM9+WGER+B/zQo2yxfDHhk9OOsHx5vyuaEMt9QufLRyacE9oV3vfXGTI+gHx5vyueiPO2P1zunfJc2mi0dmPFDsBf3gpJlSpvMwYFzWirR1wUmYA78haNqwX5TOef9CdQT6YRlCpqzkJejxP4AX8BVirZQgtSLa2Ur9OzG9c1dBQVnrPEgtO4rKtpescmRZR8klWNsQXCegmiCbgY4ywQz4Pz+aNmyV0i0Yh7/OOdqqDbL1IjNRHxyAE3AajsBeSFpjQlfGhIKcCPn88/bNIMta8s2V3FzJ9XPzv9/d82U9qVJ03Ma5Sb291KyUaAIizSDnW8H9ARAuZ9k0SUHqAAAAAElFTkSuQmCC) 2x);
+    background-position:50%;
+    background-repeat:no-repeat;
+    background-color:#08f
+}
+.search-btn:hover {
+    background-color:rgba(0, 136, 255, .8)
+}
+.search-btn:active {
+    background-color:rgba(0, 136, 255, .6)
+}
+.search-change {
+    position:absolute;
+    right:6vw;
+    top:0;
+    height:100%;
+    text-align:right;
+    transition:opacity 0s linear
+}
+.search-change-btn {
+    background-position-y:center !important;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+    display:inline-block;
+    box-sizing:border-box;
+    line-height:6vh;
+    padding-right:32px;
+    font-size:1vw;
+    color:rgba(0, 0, 0, .7);
+    background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAABGdBTUEAALGPC/xhBQAAADlJREFUCB1jYGBgCAZiESDGBkDiIHmwgnQoDeLDAEgBiji6ADofphFuojq6CXAVUAbIhDQgBtFwAAC/xAS2DrIJmAAAAABJRU5ErkJggg==) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAABGdBTUEAALGPC/xhBQAAAJRJREFUKBWVkd0NQDAUhSs8YgBjYAzjMoYJvBvAApxP3KRpivYkpzf9OV/a29I5N8q9vMm5KhSY5LbUAARYI+fADEL2AEQYyPDUFJhByKzyAgjlwELIrPxpoFRYFELYB/3BXiEx0BvsE0KoYgh0as67Ec00WWPvntii1fBptk71P6DTnN+JQjj8BWIfWC3v8iJz26gu33coXfvx9IsAAAAASUVORK5CYII=) 2x);
+    background-repeat:no-repeat;
+    background-position:calc(100% - 18px) 20px
+}
+#search .search-dropdown {
+    overflow:hidden;
+    position:absolute;
+    z-index:200;
+    width:100px;
+    text-align:left;
+    border-radius:2px;
+    box-shadow:0 1px 5px rgba(0, 0, 0, .2);
+    background-color:#fff
+}
+.search-dropdown ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+.search-dropdown ul li {
+    height:26px;
+    padding:0 0 0 33px;
+    background-color:#fff;
+    line-height:26px;
+    position:relative;
+    cursor:pointer;
+    font-size:12px
+}
+.search-dropdown ul li:hover {
+    background-color:#ebf1f5
+}
+.search-dropdown ul li .icon {
+    position:absolute;
+    top:5px;
+    left:8px
+}
+.search-dropdown ul li img {
+    width:16px;
+    height:16px
+}

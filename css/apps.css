@@ -1,0 +1,41 @@
+.apps {
+	position: absolute;
+	height: 100%;
+	text-align: center;
+	z-index: 999;
+}
+.apps .icon {
+	width: 50px;
+	height: 50px;
+    line-height: 50px;
+	background-image: url('//resource.brook3.com/images/icon/apps.svg');
+	background-size: contain;
+    margin: 0 auto;
+}
+.apps .icon:hover {
+	background-image: url('//resource.brook3.com/images/icon/apps_fill.svg');
+}
+.apps .contain {
+	display: none;
+}
+.apps .contain a {
+	display: block;
+    text-align: center;
+    width: 66px;
+    height: 76px;
+    margin: 0 auto;
+    font-size: 12px;
+    border-bottom: #f0f0f0 1px solid;
+    color: #666;
+    text-decoration: none;
+    overflow: hidden;
+    text-shadow: none;
+    line-height: 14px;
+}
+.apps .contain a img {
+	display: block;
+    height: 36px;
+    width: auto;
+    margin: 10px auto 5px;
+    cursor: pointer;
+}
