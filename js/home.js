@@ -41,7 +41,7 @@ function getInfoByEngine(engine, type){
 			url = '//www.sogou.com/web?query=';
 			break;
 		case 'google':
-			url = '//www.google.com.hk';
+			url = '//www.google.com.hk/search?q=';
 			doodle = '暂时不能用~';
 			break;
 		case 'vimawesome':
