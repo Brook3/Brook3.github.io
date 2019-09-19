@@ -5,9 +5,8 @@
 	z-index: 999;
 }
 .apps .icon {
-	width: 50px;
-	height: 50px;
-    line-height: 50px;
+	width: 32px;
+	height: 32px;
 	background-image: url('//resource.brook3.com/images/icon/apps.svg');
 	background-size: contain;
     margin: 0 auto;

@@ -5,29 +5,31 @@
 }
 #npc img {
 	position: absolute;
-	height: 64%;
+	max-height: 64%;
 }
 #npc img:nth-child(1) {
 	right: 3%;
-	bottom: 3%;
+	bottom: 12%;
+	z-index: 4;
 }
 #npc img:nth-child(2) {
 	left: 50%;
 	transform: translate(-50%);
 	bottom: 3%;
+	z-index: 5;
 }
 #npc img:nth-child(3) {
-	left: 24%;
-	transform: translate(-24%);
-	top: 3%;
+	left: 13%;
+	bottom: 32%;
+	z-index: 2;
 }
 #npc img:nth-child(4) {
-	height: 64%;
 	left: 3%;
-	bottom: 3%;
+	bottom: 12%;
+	z-index: 3;
 }
 #npc img:nth-child(5) {
-	right: 20%;
-	transform: translate(-20%);
-	top: 3%;
+	right: 21%;
+	bottom: 32%;
+	z-index: 1;
 }
