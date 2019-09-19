@@ -21,6 +21,12 @@ body {
     pointer-events:auto;
     opacity:1
 }
+.main {
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	top: 6%;
+}
 #search{
     padding:10vh 5vw;
 }
