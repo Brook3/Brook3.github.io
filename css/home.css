@@ -36,18 +36,6 @@ body {
     background-size:320px;
 	margin: 0 auto;
 }
-#search-logo[data-engine=baidu] {
-    background-image:url('//resource.brook3.com/images/search/baidu.png')
-}
-#search-logo[data-engine=bing] {
-    background-image:url('//resource.brook3.com/images/search/bing.png')
-}
-#search-logo[data-engine=google] {
-    background-image:url('//resource.brook3.com/images/search/google.png')
-}
-#search-logo[data-engine=sogou] {
-    background-image:url('//resource.brook3.com/images/search/sogou.png')
-}
 .search-transition {
     transition:top .5s ease
 }
