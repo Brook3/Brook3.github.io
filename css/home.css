@@ -9,6 +9,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: lightgrey;
+    background-image: url(//resource.brook3.com/images/2.jpg);
 }
 .off {
     display:none
