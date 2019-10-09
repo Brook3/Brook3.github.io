@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="js/home.js"></script>
 	<script type="text/javascript" src="js/apps.js"></script>
 	<script type="text/javascript" src="js/popup.js"></script>
+	<script type="text/javascript" src="js/plugin.js"></script>
 </head>
 <body>
 	<section id="popup"></section>
@@ -126,6 +127,7 @@
 	</section>
 	<section class="setting"></section>
 	<section class="plugin">
+        <canvas id="web_name" width="900" height="500"></canvas>
 		<div id="npc">
 			<img src="//resource.brook3.com/images/npc/1.png" />
 			<img src="//resource.brook3.com/images/npc/2.png" />
@@ -133,63 +135,86 @@
 			<img src="//resource.brook3.com/images/npc/4.png" />
 			<img src="//resource.brook3.com/images/npc/5.png" />
 		</div>
+		<div class="cloud">
+			<script type="text/javascript" src="//resource.brook3.com/js/common/three.min.js"></script>
+			<script type="text/javascript" src="js/Detector.js"></script>
+			<script type="text/javascript" src="js/cloud.js"></script>
+			<script id="vs" type="x-shader/x-vertex">
+				varying vec2 vUv;
+			void main() {
+				vUv = uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+			</script>
+			<script id="fs" type="x-shader/x-fragment">
+				uniform sampler2D map;
+			uniform vec3 fogColor;
+			uniform float fogNear;
+			uniform float fogFar;
+			varying vec2 vUv;
+			void main() {
+				float depth = gl_FragCoord.z / gl_FragCoord.w;
+				float fogFactor = smoothstep( fogNear, fogFar, depth );
+				gl_FragColor = texture2D( map, vUv );
+				gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+				gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+			}
+			</script>
+		</div>
 	</section>
 	<section class="main">
-		<div id="search">
-			<div id="search-logo" class="center" data-engine="baidu">
+		<div class="search-box">
+			<div class="doodle">
+				开启探索之旅！
 			</div>
-			<div class="search-box">
-				<div class="doodle">
-					开启探索之旅！
-				</div>
-				<div class="input-area">
-					<input type="text" class="search-input">
-					<input type="button" class="search-btn" value="">
-					<div class="search-change">
-						<div class="search-change-btn">百度</div>
-						<div class="search-dropdown off">
-							<ul>
-								<li title="切换为百度搜索" engine="baidu">
-									<span class="icon"></span>
-									<span class="engine-title">百度</span>
-								</li>
-								<li title="切换为Bing搜索" engine="bing">
-									<span class="icon"></span>
-									<span class="engine-title">Bing</span>
-								</li>
-								<li title="切换为搜狗搜索" engine="sogou">
-									<span class="icon"></span>
-									<span class="engine-title">搜狗</span>
-								</li>
-								<li title="切换为Google搜索" engine="google">
-									<span class="icon"></span>
-									<span class="engine-title">Google</span>
-								</li>
-								<li title="切换为VimAwesome搜索" engine="vimawesome">
-									<span class="icon"></span>
-									<span class="engine-title">vim插件</span>
-								</li>
-								<li title="切换为GitHub搜索" engine="github">
-									<span class="icon"></span>
-									<span class="engine-title">GitHub</span>
-								</li>
-								<li title="切换为腾讯视频搜索" engine="v.qq">
-									<span class="icon"></span>
-									<span class="engine-title">腾讯视频</span>
-								</li>
-								<li title="切换为爱奇艺搜索" engine="iqiyi">
-									<span class="icon"></span>
-									<span class="engine-title">爱奇艺</span>
-								</li>
-								<li title="切换为哔哩哔哩搜索" engine="bilibili">
-									<span class="icon"></span>
-									<span class="engine-title">哔哩哔哩</span>
-								</li>
-							</ul>
-						</div>
+			<div class="input-area">
+				<input type="text" class="search-input">
+				<input type="button" class="search-btn" value="">
+				<div class="search-change">
+					<div class="search-change-btn">百度</div>
+					<div class="search-dropdown off">
+						<ul>
+							<li title="切换为百度搜索" engine="baidu">
+								<span class="icon"></span>
+								<span class="engine-title">百度</span>
+							</li>
+							<li title="切换为Bing搜索" engine="bing">
+								<span class="icon"></span>
+								<span class="engine-title">Bing</span>
+							</li>
+							<li title="切换为搜狗搜索" engine="sogou">
+								<span class="icon"></span>
+								<span class="engine-title">搜狗</span>
+							</li>
+							<li title="切换为Google搜索" engine="google">
+								<span class="icon"></span>
+								<span class="engine-title">Google</span>
+							</li>
+							<li title="切换为VimAwesome搜索" engine="vimawesome">
+								<span class="icon"></span>
+								<span class="engine-title">vim插件</span>
+							</li>
+							<li title="切换为GitHub搜索" engine="github">
+								<span class="icon"></span>
+								<span class="engine-title">GitHub</span>
+							</li>
+							<li title="切换为腾讯视频搜索" engine="v.qq">
+								<span class="icon"></span>
+								<span class="engine-title">腾讯视频</span>
+							</li>
+							<li title="切换为爱奇艺搜索" engine="iqiyi">
+								<span class="icon"></span>
+								<span class="engine-title">爱奇艺</span>
+							</li>
+							<li title="切换为哔哩哔哩搜索" engine="bilibili">
+								<span class="icon"></span>
+								<span class="engine-title">哔哩哔哩</span>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</section>
 	<section class="sidebar">

@@ -8,8 +8,6 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: lightgrey;
-    background-image: url(//resource.brook3.com/images/2.jpg);
 }
 .off {
     display:none
@@ -26,16 +24,7 @@ body {
 	position: absolute;
 	z-index: 99;
 	width: 100%;
-	top: 6%;
-}
-#search{
-    padding:10vh 5vw;
-}
-#search-logo {
-    width:320px;
-    height:120px;
-    background-size:320px;
-	margin: 0 auto;
+	top: 38%;
 }
 .search-transition {
     transition:top .5s ease
