@@ -7,15 +7,13 @@ $(function(){
 	//点击切换搜索引擎->切换图标和显示
 	$(".search-dropdown ul li").each(function(index, e){
 		$(this).click(function(){
-			// 切换logo
-			$("#search-logo").attr("data-engine", $(this).attr('engine'));
-			$(".search-change-btn").text($(this).children("span.engine-title").text());
+			$(".search-change-btn").attr("data-engine", $(this).attr('engine')).text($(this).children("span.engine-title").text());
 			$(".search-dropdown").addClass("off");
 		});
 	});
 	// 点击按钮搜索
 	$(".search-btn").click(function(){
-		var engine = $("#search-logo").attr("data-engine");
+		var engine = $(".search-change-btn").attr("data-engine");
 		var url = getInfoByEngine(engine, 'url');
 		window.open(url + $(".search-input").val());
 	});

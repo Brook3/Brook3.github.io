@@ -153,8 +153,8 @@ body {
 	padding-left: 0;
 }
 .search-dropdown ul li {
+	text-align: center;
     height:26px;
-    padding:0 0 0 33px;
     background-color:#fff;
     line-height:26px;
     position:relative;
