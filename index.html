@@ -168,59 +168,21 @@
         </div>
 	</section>
 	<section class="main">
-		<div class="search-box">
-			<div class="doodle">
-				开启探索之旅！
-			</div>
-			<div class="input-area">
-				<input type="text" class="search-input">
-				<input type="button" class="search-btn" value="">
-				<div class="search-change">
-					<div class="search-change-btn" data-engine="baidu">百度</div>
-					<div class="search-dropdown off">
-						<ul>
-							<li title="切换为百度搜索" engine="baidu">
-								<span class="icon"></span>
-								<span class="engine-title">百度</span>
-							</li>
-							<li title="切换为Bing搜索" engine="bing">
-								<span class="icon"></span>
-								<span class="engine-title">Bing</span>
-							</li>
-							<li title="切换为搜狗搜索" engine="sogou">
-								<span class="icon"></span>
-								<span class="engine-title">搜狗</span>
-							</li>
-							<li title="切换为Google搜索" engine="google">
-								<span class="icon"></span>
-								<span class="engine-title">Google</span>
-							</li>
-							<li title="切换为VimAwesome搜索" engine="vimawesome">
-								<span class="icon"></span>
-								<span class="engine-title">vim插件</span>
-							</li>
-							<li title="切换为GitHub搜索" engine="github">
-								<span class="icon"></span>
-								<span class="engine-title">GitHub</span>
-							</li>
-							<li title="切换为腾讯视频搜索" engine="v.qq">
-								<span class="icon"></span>
-								<span class="engine-title">腾讯视频</span>
-							</li>
-							<li title="切换为爱奇艺搜索" engine="iqiyi">
-								<span class="icon"></span>
-								<span class="engine-title">爱奇艺</span>
-							</li>
-							<li title="切换为哔哩哔哩搜索" engine="bilibili">
-								<span class="icon"></span>
-								<span class="engine-title">哔哩哔哩</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
+        <div class="search-box">
+            <select class="search-change">
+                <option value="baidu">百度</option>
+                <option value="bing">Bing</option>
+                <option value="sogou">搜狗</option>
+                <option value="google">Google</option>
+                <option value="vimawesome">vim插件</option>
+                <option value="github">GitHub</option>
+                <option value="v.qq">腾讯视频</option>
+                <option value="iqiyi">爱奇艺</option>
+                <option value="bilibili">哔哩哔哩</option>
+            </select>
+            <input type="text" class="search-input">
+            <button class="search-btn" value="">go</button>
+        </div>
 	</section>
 	<section class="sidebar">
 		分享

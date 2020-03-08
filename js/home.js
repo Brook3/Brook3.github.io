@@ -1,20 +1,9 @@
 //获取输入内容，不同的搜索引擎需要独立配置
 $(function(){
-	//点击切换搜索引擎->展开列表
-	$(".search-change-btn").click(function(){
-		$(".search-dropdown").removeClass("off");
-	});
-	//点击切换搜索引擎->切换图标和显示
-	$(".search-dropdown ul li").each(function(index, e){
-		$(this).click(function(){
-			$(".search-change-btn").attr("data-engine", $(this).attr('engine')).text($(this).children("span.engine-title").text());
-			$(".search-dropdown").addClass("off");
-		});
-	});
 	// 点击按钮搜索
 	$(".search-btn").click(function(){
-		var engine = $(".search-change-btn").attr("data-engine");
-		var url = getInfoByEngine(engine, 'url');
+		var engine = $(".search-change").val();
+		var url = getInfoByEngine(engine);
 		window.open(url + $(".search-input").val());
 	});
 	// 回车键搜索
@@ -26,8 +15,8 @@ $(function(){
 });
 
 //根据不同的搜索引擎获取不同的信息
-function getInfoByEngine(engine, type){
-	var url = '', doodle = '';
+function getInfoByEngine(engine){
+	var url = '';
 	switch(engine){
 		case 'baidu':
 			url = '//www.baidu.com/s?wd=';
@@ -40,11 +29,9 @@ function getInfoByEngine(engine, type){
 			break;
 		case 'google':
 			url = '//www.google.com.hk/search?q=';
-			doodle = '暂时不能用~';
 			break;
 		case 'vimawesome':
 			url = '//vimawesome.com/?q=';
-			doodle='请耐心等待';
 			break;
 		case 'github':
 			url = '//github.com/search?q=';
@@ -59,9 +46,5 @@ function getInfoByEngine(engine, type){
 			url = '//so.iqiyi.com/so/q_';
 			break;
 	}
-	if(type == 'url'){
-		return url;
-	}else if(type == 'doodle'){
-		return doodle;
-	}
+    return url;
 }

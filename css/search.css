@@ -1,0 +1,39 @@
+.search-box {
+    right: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    height: 64px;
+    border-radius: 42px;
+    border: 2px solid #324B4E;
+    background: snow;
+    display: flex;
+}
+.search-box select, button{
+    cursor: pointer;
+}
+.search-box select, input, button{
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+    height: 100%;
+}
+.search-box .search-change {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    background-image: none;
+}
+.search-box .search-input {
+    padding: 0 1%;
+    font-size: 22px;
+    width: 100%;
+}
+.search-box .search-btn:before {
+    color: #324b4e;
+}
+.search-box .search-btn {
+    width: 20%;
+}
