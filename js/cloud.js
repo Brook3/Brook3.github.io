@@ -35,6 +35,8 @@ $(function(){
 
 		container.style.background = 'url(' + canvas.toDataURL('image/png') + ')';
 		container.style.backgroundSize = '32px 100%';
+		container.style.position = 'fixed';
+		container.style.zIndex = -1;
 
 		//
 
