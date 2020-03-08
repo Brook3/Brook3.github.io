@@ -39,3 +39,16 @@
 	bottom: 32%;
 	z-index: 1;
 }
+#tips {
+position: absolute;
+    width: 18%;
+    height: 18%;
+    background-color: #385743;
+    right: 1%;
+    bottom: 1%;
+    border: 16px solid #B1751B;
+    border-radius: 3%;
+    padding: 1%;
+    color: white;
+    box-shadow: 5px 5px 5px grey;
+}
