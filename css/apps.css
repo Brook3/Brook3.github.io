@@ -7,12 +7,12 @@
 .apps .icon {
 	width: 32px;
 	height: 32px;
-	background-image: url('//resource.brook3.com/images/icon/apps.svg');
+	background-image: url('/images/apps.svg');
 	background-size: contain;
     margin: 0 auto;
 }
 .apps .icon:hover {
-	background-image: url('//resource.brook3.com/images/icon/apps_fill.svg');
+	background-image: url('/images/apps_fill.svg');
 }
 .apps .contain {
 	display: none;
